@@ -243,7 +243,7 @@ const About = ({ experiences }: AboutProps): JSX.Element => (
         Full Stack & Flutter Developer
       </Title>
       <Container maxWidth={['100%', '720px']} marginY="2rem">
-        <Text>I&apos;m a  passionate web and app developer from India .</Text>
+        <Text>I'm a  passionate web and app developer from India .</Text>
         <Text>
         In my free time, I show interest in learning new technologies and working on industry-level projects to enhance my skills.
         </Text>
