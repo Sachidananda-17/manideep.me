@@ -38,7 +38,7 @@ const Home = (): JSX.Element => (
       <Container maxWidth="700px" gridGap="3rem">
         <Container>
           <Text textAlign="center">
-            I'm a Full Stack and Flutter developer with experience in Devop's, Data Structures. Contributed as Freelancer to various corporate projects.
+            I am  Full Stack and Flutter developer with experience in Devop's, Data Structures. Contributed as Freelancer to various corporate projects.
           </Text>
           <Text textAlign="center">
           I am always open to  new professional connections 🤝 and exploring for  opportunities to work 🧑‍💻.Feel free to reach & discuss potential collaborations or internship prospects. 
