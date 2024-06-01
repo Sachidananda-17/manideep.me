@@ -1,8 +1,6 @@
 # [Sachidananda_Manideep]
 
-Source code of my personal website & blog ✨
-
-Check the live version [here](https://shellbear.me/) ⚡️
+Check the live version [here](https://manideep-me.vercel.app)
 
 
 
