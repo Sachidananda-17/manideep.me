@@ -64,6 +64,7 @@ const Projects = ({ projects }: ProjectProps): JSX.Element => (
           alignItems="flex-start"
           width="100%"
           gridGap="1.5rem"
+
         >
           <Link href={data.url} width="100%" target="_blank">
             <ProjectImage src={data.preview} />
@@ -117,3 +118,5 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default Projects;
+
+
