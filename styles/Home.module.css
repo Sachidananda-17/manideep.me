@@ -2,10 +2,12 @@
   min-height: 100vh;
   max-width: 1280px;
   margin: 0 auto;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  padding: 0 1rem;
 }
 
 .main {
@@ -28,11 +30,23 @@
   .container {
     padding: 0 1rem;
   }
+
+  .title {
+    font-size: 2.5rem; /* Adjust title size for smaller screens */
+  }
+
+  .description {
+    font-size: 1.25rem; /* Adjust description size for smaller screens */
+  }
+
+  .card {
+    flex-basis: 100%; /* Ensure cards take full width on small screens */
+  }
 }
 
 .footer {
   width: 100%;
-  height: auto ;
+  height: auto;
   padding: 2rem 1rem;
   border-top: 1px solid #eaeaea;
   flex-direction: column;
@@ -80,6 +94,8 @@
 
 .image {
   border-radius: 50%;
+  max-width: 100%;
+  height: auto;
 }
 
 .code {
@@ -138,5 +154,15 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-container {
+    margin-bottom: 2rem; /* Increase the margin to ensure no overlap with the footer */
+  }
+
+  .footer {
+    padding-bottom: 4rem; /* Increase padding to ensure enough space */
   }
 }

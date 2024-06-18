@@ -52,7 +52,7 @@ const Links = (): JSX.Element => (
     <NavLink href="/">Home</NavLink>
     <NavLink href="/about">About</NavLink>
     <NavLink href="/projects">Projects</NavLink>
-    <NavLink href="https://drive.google.com/file/d/11JKEEixsgvg9EXTwDTYLa8yWGzrBySHm/view?usp=sharing">Resume</NavLink>
+    <NavLink href="https://drive.google.com/file/d/1Q4XkQyDQln_9ENFG1Eqjv-VAT09Og8l2/view?usp=sharing">Resume</NavLink>
 
   </>
 );

@@ -39,7 +39,7 @@ const ProjectButton = styled(Button)`
 `;
 
 const Projects = ({ projects }: ProjectProps): JSX.Element => (
-  <Container marginBottom="5rem">
+  <Container className="project-container" marginBottom="5rem">
     <Head>
       <title>Projects</title>
     </Head>
@@ -118,5 +118,3 @@ export const getStaticProps: GetStaticProps = async () => {
 };
 
 export default Projects;
-
-

@@ -4,9 +4,9 @@ import Grid from './Grid';
 import Link from './Link';
 import Text from './Text';
 import React from 'react';
-import { SiGithub, SiLinkedin, SiTwitter,SiLeetcode } from 'react-icons/si';
+import { SiGithub, SiLinkedin, SiTwitter, SiLeetcode } from 'react-icons/si';
 import { MdMail } from 'react-icons/md';
-import {  Instagram } from '@icons';
+import { Instagram } from '@icons';
 
 const StyledFooter = styled.footer`
   width: 100%;
@@ -16,6 +16,8 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* Add this line */
+  margin-top: auto; /* Add this line */
   bottom: 0;
   left: 0;
 `;
@@ -54,8 +56,6 @@ const links = [
     url: 'https://www.instagram.com/mani.deeepu/',
     icon: Instagram,
   },
-  
-
 ];
 
 const Footer = (): JSX.Element => (
@@ -65,7 +65,7 @@ const Footer = (): JSX.Element => (
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/projects">Projects</Link>
-        <Link href = "https://drive.google.com/file/d/11JKEEixsgvg9EXTwDTYLa8yWGzrBySHm/view?usp=sharing">Resume</Link>
+        <Link href="https://drive.google.com/file/d/11JKEEixsgvg9EXTwDTYLa8yWGzrBySHm/view?usp=sharing">Resume</Link>
         <Link href="mailto:manideep.karalapati@gmail.com">Contact</Link>
       </Grid>
     </Container>
@@ -77,7 +77,7 @@ const Footer = (): JSX.Element => (
       ))}
     </FooterGrid>
     <Text margin={0} fontSize="0.9rem" color="rgba(0, 0, 0, 0.7)">
-      © Sachidananda Manideep  2023 → {new Date().getFullYear()}
+      © Sachidananda Manideep 2023 → {new Date().getFullYear()}
     </Text>
   </StyledFooter>
 );
