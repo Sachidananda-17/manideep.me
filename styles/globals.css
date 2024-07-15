@@ -21,6 +21,7 @@ a:hover {
 
 * {
   box-sizing: border-box;
+  /* height: 4000px; */
 }
 
 .mobile {
@@ -74,3 +75,39 @@ button {
     font-size: 0.875rem;
   }
 }
+
+/* .temp{
+  background-color: red;
+} */
+
+/* Media Queries for Footer  */
+/* @media screen and (max-width: 650px) {
+  .temp{
+    background-color: blue;
+    position: absolute;
+    top: 250px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .temp{
+    background-color: blue;
+    position: absolute;
+    top: 500px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .temp{
+    background-color: blue;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .temp{
+    background-color: blue;
+    position: absolute;
+    top: 650px;
+  }
+} */

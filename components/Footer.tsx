@@ -16,8 +16,8 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Add this line */
-  margin-top: auto; /* Add this line */
+  position: relative;
+  margin-top: auto;
   bottom: 0;
   left: 0;
 `;
@@ -49,7 +49,7 @@ const links = [
     icon: SiLinkedin,
   },
   {
-    url: 'https://leetcode.com/u/user1863Ew/',
+    url: 'https://leetcode.com/u/sachidananda_k/',
     icon: SiLeetcode,
   },
   {
@@ -59,7 +59,7 @@ const links = [
 ];
 
 const Footer = (): JSX.Element => (
-  <StyledFooter>
+  <StyledFooter className='temp'>
     <Container paddingY="25px">
       <Grid gridGap="30px">
         <Link href="/">Home</Link>

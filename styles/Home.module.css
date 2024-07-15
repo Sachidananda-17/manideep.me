@@ -6,6 +6,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* Temp */
   overflow: hidden;
   padding: 0 1rem;
 }
@@ -53,6 +54,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Temp */
+  position: absolute;
+  top: 2100px;
 }
 
 .footer img {
