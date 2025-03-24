@@ -1,21 +1,8 @@
-// @ts-check
-
-/**
- * @type {import('next').NextConfig}
- **/
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
-    domains: ['rdl.ink'],
-  },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback.fs = false;
-    }
-    config.module.rules.push({
-      test: /\.md|\.mdx|\.webp$/,
-      use: 'raw-loader',
-    });
-
-    return config;
+    domains: ["github.com", "encrypted-tbn0.gstatic.com"],
   },
 };
+
+module.exports = nextConfig;
