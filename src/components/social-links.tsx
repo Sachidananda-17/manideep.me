@@ -13,7 +13,7 @@ const SocialMediaLinks = [
     id: 2,
     name: "Medium",
     icon: <FaMediumM className="h-6 w-6 text-[#1DA1F2]" />,
-    link: "##",
+    link: "https://medium.com/@manideep.karalapati",
   },
   {
     id: 3,
