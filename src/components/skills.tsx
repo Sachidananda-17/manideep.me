@@ -25,7 +25,6 @@ const skills = [
   "Postman",
   "Vercel",
   "Netlify",
-  "Docker"
 ];
 
 export default function SkillsSession() {
