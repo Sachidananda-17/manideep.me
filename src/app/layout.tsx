@@ -1,14 +1,21 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Space_Grotesk } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Sachidananda Manideep -  Portfolio",
   description:
-    "I'm Sachidananda Manideep, a Full Stack Developer based in Amaravati, India. As a CSE student at SRM University AP and developer at Razorpay, I specialize in full-stack, blockchain, and generative AI applications. Highlights include selecting and working as reserach intern in University of Galyway Ireland, QS-200 in developing a plagarism detection tool. Let's connect to explore innovative projects.",
+    "Sachidananda Manideep is a Software Engineer at Razorpay building AI agents, agentic workflows and MCP-based tool integrations. 2nd place at the Sarvam Epoch Buildathon, Razorpay MVP and AI Whisperer award winner, and former AI/ML research intern at the University of Galway.",
   keywords: [
     "Sachidananda Manideep",
+    "AI Engineer",
+    "AI Agents",
+    "Agentic Workflows",
+    "Model Context Protocol",
+    "MCP",
+    "LLM",
+    "ADLC",
     "Full Stack Developer",
     "React",
     "Software Engineering",
@@ -29,11 +36,20 @@ export const metadata: Metadata = {
   ],
 };
 
-const spaceGrotesk = Space_Grotesk({
-  style: "normal",
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
+
+const inter = Inter({
   display: "swap",
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-inter",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  display: "swap",
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
 });
 
 export default function RootLayout({
@@ -43,7 +59,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={spaceGrotesk.variable}>{children}</body>
+      <body className={`${inter.variable} ${jetbrainsMono.variable}`}>
+        {children}
+      </body>
       <GoogleAnalytics gaId="G-BK2D6GWSM8" />
     </html>
   );

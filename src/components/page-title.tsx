@@ -1,7 +1,17 @@
-import React from "react";
+import { Reveal } from "./reveal";
 
-export function PageTitle({ title }: { title: string }) {
+export function PageTitle({
+  title,
+  eyebrow,
+}: {
+  title: string;
+  eyebrow?: string;
+}) {
   return (
-    <h2 className="text-3xl font-bold text-gray-800 md:text-4xl">{title}</h2>
+    <Reveal className="mb-12">
+      <h2 className="text-3xl font-bold tracking-tight text-black md:text-5xl">
+        {title}
+      </h2>
+    </Reveal>
   );
 }
