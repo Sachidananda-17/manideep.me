@@ -1,29 +1,29 @@
+import { FiArrowUpRight } from "react-icons/fi";
 import { SocialLinks } from "./social-links";
+import { Reveal } from "./reveal";
 
 export function ContactSection() {
   return (
-    <div
-      className="mx-auto flex w-full max-w-4xl flex-col items-center justify-center space-y-5 px-4 py-20"
-      id="contact"
-    >
-      <div className="z-10 flex flex-col items-center justify-center space-y-6 text-center">
-        <div className="w-full px-4">
-          <h2 className="font-scroll-m-20 text-center text-3xl font-bold">
-            Get in touch
+    <section className="section" id="contact">
+      <Reveal className="border-t border-zinc-200 pt-16 text-center">
+        <div className="mx-auto flex max-w-2xl flex-col items-center space-y-6">
+          <h2 className="text-4xl font-bold tracking-tight text-black md:text-6xl">
+            Let&apos;s build something together
           </h2>
-        </div>
-
-        <div className="mt-10 flex flex-col items-center justify-center space-y-3">
-          <p className="font-scroll-m-20 max-w-xl text-center text-xl font-normal text-gray-600">
-            My inbox is always open. Whether for a potential project or just to
-            say Hello, I&apos;ll try my best to answer your email!
+          <p className="text-lg text-zinc-500">
+            My inbox is always open. Whether it&apos;s a project, an
+            opportunity, or just to say hello.
           </p>
-          <p className="text-xl font-medium text-gray-900">
+          <a
+            href="mailto:manideep.karalapati@gmail.com"
+            className="btn-solid group"
+          >
             manideep.karalapati@gmail.com
-          </p>
+            <FiArrowUpRight className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
           <SocialLinks />
         </div>
-      </div>
-    </div>
+      </Reveal>
+    </section>
   );
 }

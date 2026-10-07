@@ -1,20 +1,27 @@
 import { AboutMeSection } from "@/components/about";
+import { AchievementsSection } from "@/components/achievements";
 import { ContactSection } from "@/components/contact";
 import { ExperienceSection } from "@/components/experience";
 import { HomeSection } from "@/components/home";
+import { Footer } from "@/components/footer";
+import { FloatingNavbar } from "@/components/navbar";
 import { Projects } from "@/components/projects";
+import { TestimonialsSection } from "@/components/testimonials";
 import SkillsSession from "@/components/skills";
 
 export default function Home() {
   return (
-    <div className="relative">
-      <div className="fixed inset-0 z-0 bg-[url(/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+    <main className="relative">
+      <FloatingNavbar />
       <HomeSection />
       <AboutMeSection />
-      <SkillsSession />
+      <AchievementsSection />
       <ExperienceSection />
       <Projects />
+      <SkillsSession />
+      <TestimonialsSection />
       <ContactSection />
-    </div>
+      <Footer />
+    </main>
   );
 }

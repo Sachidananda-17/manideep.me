@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        "space-grotesk": "var(--font-space-grotesk)",
+        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "ui-monospace", "monospace"],
       },
     },
   },
