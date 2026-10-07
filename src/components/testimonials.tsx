@@ -35,40 +35,53 @@ export async function TestimonialsSection() {
   const hasDummy = testimonials.some((t) => t.dummy);
   const formUrl = process.env.TESTIMONIAL_FORM_URL;
 
+  // Nothing to show and no way to collect one: hide the whole section.
+  if (testimonials.length === 0 && !formUrl) return null;
+
   return (
     <section className="section" id="testimonials">
       <PageTitle title="Kind words" />
-      {hasDummy && (
-        <Reveal className="-mt-6 mb-8">
-          <p className="inline-block rounded-full border border-dashed border-zinc-400 px-3 py-1 font-mono text-xs text-zinc-500">
-            Preview with placeholder text, real recommendations coming
+
+      {testimonials.length === 0 ? (
+        <Reveal>
+          <p className="max-w-xl text-lg text-zinc-500">
+            No testimonials yet. Worked with me? I&apos;d love to hear from you.
           </p>
         </Reveal>
-      )}
-
-      <div
-        className="marquee -mx-6 overflow-hidden"
-        style={{
-          maskImage:
-            "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
-        }}
-      >
-        <div className="marquee-track flex w-max">
-          {[0, 1].map((copy) => (
-            <div
-              key={copy}
-              className="flex gap-5 pr-5"
-              aria-hidden={copy === 1}
-            >
-              {testimonials.map((t) => (
-                <Card key={`${copy}-${t.name}`} t={t} />
+      ) : (
+        <>
+          {hasDummy && (
+            <Reveal className="-mt-6 mb-8">
+              <p className="inline-block rounded-full border border-dashed border-zinc-400 px-3 py-1 font-mono text-xs text-zinc-500">
+                Preview with placeholder text, real recommendations coming
+              </p>
+            </Reveal>
+          )}
+          <div
+            className="marquee -mx-6 overflow-hidden"
+            style={{
+              maskImage:
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent, black 8%, black 92%, transparent)",
+            }}
+          >
+            <div className="marquee-track flex w-max">
+              {[0, 1].map((copy) => (
+                <div
+                  key={copy}
+                  className="flex gap-5 pr-5"
+                  aria-hidden={copy === 1}
+                >
+                  {testimonials.map((t) => (
+                    <Card key={`${copy}-${t.name}`} t={t} />
+                  ))}
+                </div>
               ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        </>
+      )}
 
       {formUrl && (
         <Reveal className="mt-10 text-center">

@@ -1,4 +1,5 @@
 import fallback from "@/data/testimonials.fallback.json";
+import dummy from "@/data/testimonials.dummy.json";
 
 export type Testimonial = {
   quote: string;
@@ -79,18 +80,25 @@ export function rowsToTestimonials(rows: string[][]): Testimonial[] {
 
 /**
  * Approved testimonials from the published Google Sheet (CSV).
- * Never throws: on any problem (no URL, network error, bad data, no approved
- * rows) it falls back to the saved backup file so the section never breaks.
+ *
+ * - Never throws: on any problem it falls back to testimonials.fallback.json
+ *   (keep real, approved testimonials there as a backup; it is empty by default).
+ * - Placeholder "Dummy" testimonials are only ever shown on a developer's
+ *   machine when no sheet is configured. They never appear in production.
  */
 export async function getTestimonials(): Promise<Testimonial[]> {
   const url = process.env.TESTIMONIALS_CSV_URL;
-  if (!url) return fallback as Testimonial[];
+  if (!url) {
+    return process.env.NODE_ENV === "production"
+      ? (fallback as Testimonial[])
+      : (dummy as Testimonial[]);
+  }
 
   try {
     const res = await fetch(url, { next: { revalidate: 300 } });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const items = rowsToTestimonials(parseCsv(await res.text()));
-    return items.length ? items : (fallback as Testimonial[]);
+    // A working sheet with no approved rows is a valid, empty result.
+    return rowsToTestimonials(parseCsv(await res.text()));
   } catch (err) {
     console.error("[testimonials] sheet unavailable, using backup:", err);
     return fallback as Testimonial[];
