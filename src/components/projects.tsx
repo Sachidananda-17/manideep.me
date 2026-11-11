@@ -19,9 +19,19 @@ const projects: Project[] = [
     title: "Sahayak — UCXP Protocol",
     description:
       "Sahayak agent on UCXP, the Unified Customer Experience Protocol: a manifest-driven runtime where one agent serves any business with zero business-specific code. Voice-first, multilingual, on Sarvam.",
-    projectLink: "https://www.loom.com/share/c7904325fba347adaaad6f623799d98a",
-    projectLabel: "Watch demo",
-    githubLink: "https://github.com/Sachidananda-17/sahayak-ucxp-sarvam",
+    imageSrc: "/img/projects/sahayak.png",
+    projectLink: "https://sahayak-ucxp.vercel.app",
+    projectLabel: "Live demo",
+    githubLink: "https://github.com/akashmeruva9/sahayak-ucxp-sarvam",
+  },
+  {
+    title: "OpenLens — AI Media House",
+    description:
+      "An AI media house that shows its work: one story becomes a reviewed Claim & Evidence Ledger, then web and mobile apps, narrated multilingual videos and channel-ready posts. Built on Gemini + Google Cloud.",
+    imageSrc: "/img/projects/openlens.png",
+    projectLink: "https://openlens-web-948923830185.us-central1.run.app/",
+    projectLabel: "Live demo",
+    githubLink: "https://github.com/akashmeruva9/open-lens",
   },
   {
     title: "Connect-Celeb",
@@ -32,52 +42,7 @@ const projects: Project[] = [
     projectLabel: "View project",
     githubLink: "https://github.com/Sachidananda-17/Connect_Celeb",
   },
-  {
-    title: "Fertiwise",
-    description:
-      "SIH 2024 product that helps farmers pick the best fertilizers for their crops using AI/ML.",
-    imageSrc: "/img/projects/fertiwise.png",
-    projectLink:
-      "https://drive.google.com/drive/folders/1inDSo6sLhf9axZ2jm2H_YPwfybwUuEen",
-    projectLabel: "View project",
-    githubLink: "https://github.com/Venkat-Kolasani/SIH_2024_FertiWise",
-  },
-  {
-    title: "Brain Anomaly Detection",
-    description:
-      "Detecting brain anomalies from MRI images using a deep learning model.",
-    imageSrc: "/img/projects/brain-anamoly.png",
-    projectLink: "",
-    projectLabel: "",
-    githubLink: "https://github.com/Sachidananda-17/Brain-Anamoly-Detection",
-  },
 ];
-
-const layers = [
-  { name: "Client", note: "app · WhatsApp" },
-  { name: "UCXP Runtime", note: "generic" },
-  { name: "manifests/*.json", note: "per business" },
-  { name: "AI Engine", note: "voice · text" },
-  { name: "Sarvam APIs", note: "STT · LLM · TTS" },
-];
-
-/** Visual for UCXP, which has no screenshot: the layer stack as a compact panel. */
-function UcxpVisual() {
-  return (
-    <div className="flex h-full flex-col justify-center gap-1.5 bg-black px-5 font-mono text-[11px] text-zinc-300">
-      <span className="mb-1 text-zinc-500">ucxp.run(message)</span>
-      {layers.map((layer, i) => (
-        <div key={layer.name} className="flex items-center gap-2">
-          <span className="text-zinc-600">{i + 1}</span>
-          <span className="flex flex-1 items-center justify-between rounded border border-zinc-700 px-2 py-0.5 text-white">
-            {layer.name}
-            <span className="text-zinc-500">{layer.note}</span>
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export function Projects() {
   return (
@@ -89,7 +54,7 @@ export function Projects() {
           <Reveal key={project.title} delay={(index % 3) * 100}>
             <div className="group card flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-black">
               <div className="relative h-48 overflow-hidden border-b border-zinc-200">
-                {project.imageSrc ? (
+                {project.imageSrc && (
                   <Image
                     src={project.imageSrc}
                     alt={project.title}
@@ -97,8 +62,6 @@ export function Projects() {
                     height={300}
                     className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                   />
-                ) : (
-                  <UcxpVisual />
                 )}
               </div>
               <div className="flex flex-1 flex-col p-6">

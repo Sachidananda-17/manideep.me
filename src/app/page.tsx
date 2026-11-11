@@ -5,6 +5,7 @@ import { ExperienceSection } from "@/components/experience";
 import { HomeSection } from "@/components/home";
 import { Footer } from "@/components/footer";
 import { FloatingNavbar } from "@/components/navbar";
+import { GithubActivity } from "@/components/github-activity";
 import { Projects } from "@/components/projects";
 import { TestimonialsSection } from "@/components/testimonials";
 import SkillsSession from "@/components/skills";
@@ -18,6 +19,7 @@ export default function Home() {
       <AchievementsSection />
       <ExperienceSection />
       <Projects />
+      <GithubActivity />
       <SkillsSession />
       <TestimonialsSection />
       <ContactSection />
