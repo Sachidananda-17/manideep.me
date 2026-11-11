@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export type Day = { date: string; count: number; level: 0 | 1 | 2 | 3 | 4 };
 
@@ -36,6 +36,28 @@ export function GithubHeatmap({
   }
   const years = Array.from(byYear.keys()).sort((a, b) => Number(b) - Number(a));
   const [year, setYear] = useState(years[0]);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [tip, setTip] = useState<{ x: number; y: number; text: string } | null>(
+    null,
+  );
+
+  const showTip = (e: React.MouseEvent<HTMLDivElement>, day: Day) => {
+    const card = cardRef.current?.getBoundingClientRect();
+    if (!card) return;
+    const cell = e.currentTarget.getBoundingClientRect();
+    const date = utc(day.date).toLocaleDateString("en", {
+      weekday: "short",
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+      timeZone: "UTC",
+    });
+    setTip({
+      x: cell.left - card.left + cell.width / 2,
+      y: cell.top - card.top,
+      text: `${day.count === 0 ? "No" : day.count} contribution${day.count === 1 ? "" : "s"} on ${date}`,
+    });
+  };
 
   const yearDays = byYear.get(year)!;
   const weeks = buildWeeks(yearDays);
@@ -55,7 +77,7 @@ export function GithubHeatmap({
 
   return (
     <div className="flex flex-col gap-4 md:flex-row">
-      <div className="card min-w-0 flex-1 p-6">
+      <div ref={cardRef} className="card relative min-w-0 flex-1 p-6">
         <div className="overflow-x-auto">
           <div className="min-w-max">
             <div className="mb-2 flex gap-[3px] text-[10px] text-zinc-500">
@@ -72,8 +94,9 @@ export function GithubHeatmap({
                     day ? (
                       <div
                         key={di}
-                        title={`${day.count} contribution${day.count === 1 ? "" : "s"} on ${day.date}`}
-                        className={`h-[11px] w-[11px] rounded-[2px] ${levelClass[day.level]}`}
+                        onMouseEnter={(e) => showTip(e, day)}
+                        onMouseLeave={() => setTip(null)}
+                        className={`h-[11px] w-[11px] rounded-[2px] transition hover:ring-2 hover:ring-black/40 ${levelClass[day.level]}`}
                       />
                     ) : (
                       <div key={di} className="h-[11px] w-[11px]" />
@@ -84,6 +107,14 @@ export function GithubHeatmap({
             </div>
           </div>
         </div>
+        {tip && (
+          <div
+            className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded-md bg-black px-2.5 py-1.5 text-xs font-medium text-white shadow-lg"
+            style={{ left: tip.x, top: tip.y - 6 }}
+          >
+            {tip.text}
+          </div>
+        )}
         <div className="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-zinc-500">
           <a
             href={`https://github.com/${username}`}
