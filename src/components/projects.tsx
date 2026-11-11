@@ -22,7 +22,7 @@ const projects: Project[] = [
     imageSrc: "/img/projects/sahayak.png",
     projectLink: "https://sahayak-ucxp.vercel.app",
     projectLabel: "Live demo",
-    githubLink: "https://github.com/akashmeruva9/sahayak-ucxp-sarvam",
+    githubLink: "https://github.com/Sachidananda-17/sahayak-ucxp-sarvam",
   },
   {
     title: "OpenLens — AI Media House",
@@ -31,7 +31,7 @@ const projects: Project[] = [
     imageSrc: "/img/projects/openlens.png",
     projectLink: "https://openlens-web-948923830185.us-central1.run.app/",
     projectLabel: "Live demo",
-    githubLink: "https://github.com/akashmeruva9/open-lens",
+    githubLink: "https://github.com/Sachidananda-17/open-lens",
   },
   {
     title: "Connect-Celeb",
@@ -53,14 +53,14 @@ export function Projects() {
         {projects.map((project, index) => (
           <Reveal key={project.title} delay={(index % 3) * 100}>
             <div className="group card flex h-full flex-col overflow-hidden transition duration-300 hover:-translate-y-1 hover:border-black">
-              <div className="relative h-48 overflow-hidden border-b border-zinc-200">
+              <div className="relative aspect-[2/1] w-full overflow-hidden border-b border-zinc-200 bg-zinc-100">
                 {project.imageSrc && (
                   <Image
                     src={project.imageSrc}
                     alt={project.title}
                     width={600}
                     height={300}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                    className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
                   />
                 )}
               </div>
