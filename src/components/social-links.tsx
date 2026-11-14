@@ -6,7 +6,7 @@ const SocialMediaLinks = [
     id: 1,
     name: "Resume",
     icon: <FaFilePdf className="h-4 w-4" />,
-    link: "https://drive.google.com/file/d/1JsjQ9uT3Efs3tYcTgerX2bsLfuCZrC4Y/view?usp=sharing",
+    link: "https://drive.google.com/file/d/1ywveMyatyBWH8zMvjD4C-SPMush134Sd/view?usp=sharing",
   },
   {
     id: 2,
