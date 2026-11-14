@@ -18,7 +18,7 @@ const SocialMediaLinks = [
     id: 3,
     name: "Github",
     icon: <FaGithub className="h-4 w-4" />,
-    link: "https://github.com/Sachidananda-17",
+    link: "https://github.com/manikaralapati",
   },
   {
     id: 4,

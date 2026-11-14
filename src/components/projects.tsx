@@ -22,7 +22,7 @@ const projects: Project[] = [
     imageSrc: "/img/projects/sahayak.png",
     projectLink: "https://sahayak-ucxp.vercel.app",
     projectLabel: "Live demo",
-    githubLink: "https://github.com/Sachidananda-17/sahayak-ucxp-sarvam",
+    githubLink: "https://github.com/manikaralapati/sahayak-ucxp-sarvam",
   },
   {
     title: "OpenLens — AI Media House",
@@ -31,7 +31,7 @@ const projects: Project[] = [
     imageSrc: "/img/projects/openlens.png",
     projectLink: "https://openlens-web-948923830185.us-central1.run.app/",
     projectLabel: "Live demo",
-    githubLink: "https://github.com/Sachidananda-17/open-lens",
+    githubLink: "https://github.com/manikaralapati/open-lens",
   },
   {
     title: "Connect-Celeb",
@@ -40,7 +40,7 @@ const projects: Project[] = [
     imageSrc: "/img/projects/connect-celeb.png",
     projectLink: "https://connect-celeb.vercel.app/",
     projectLabel: "View project",
-    githubLink: "https://github.com/Sachidananda-17/Connect_Celeb",
+    githubLink: "https://github.com/manikaralapati/Connect_Celeb",
   },
 ];
 

@@ -2,7 +2,7 @@ import { GithubHeatmap, type Day } from "./github-heatmap";
 import { PageTitle } from "./page-title";
 import { Reveal } from "./reveal";
 
-const USERNAME = "Sachidananda-17";
+const USERNAME = "manikaralapati";
 
 async function getContributions(): Promise<Day[] | null> {
   try {
